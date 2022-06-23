@@ -24,7 +24,7 @@ class LocationController extends Controller
      */
     public function index()
     {
-        $location = LocationModel::all();
+        $location = LocationModel::with('blocks')->get();
 
         return response()->json($location);
     }

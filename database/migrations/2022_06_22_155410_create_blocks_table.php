@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('blocks', function (Blueprint $table) {
             $table->id();
             $table->foreignId('rooms_id')->constrained('rooms')->onUpdate('cascade');
+            $table->foreignId('location_id')->constrained('locations')->onUpdate('cascade');
             $table->timestamps();
         });
     }

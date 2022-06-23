@@ -12,4 +12,9 @@ class LocationModel extends Model
     protected $table = 'locations';
 
     protected $fillable = ['location'];
+
+    public function blocks()
+    {
+        return $this->belongsTo(BlockModel::class);
+    }
 }

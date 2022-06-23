@@ -18,48 +18,63 @@ class BlockSeeder extends Seeder
         $blocks = [
             [
                 'rooms_id' => rand(1,12),
+                'location_id' => rand(1,6),
             ],
             [
                 'rooms_id' => rand(1,12),
+                'location_id' => rand(1,6),
             ],
             [
                 'rooms_id' => rand(1,12),
+                'location_id' => rand(1,6),
             ],
             [
                 'rooms_id' => rand(1,12),
+                'location_id' => rand(1,6),
             ],
             [
                 'rooms_id' => rand(1,12),
+                'location_id' => rand(1,6),
             ],
             [
                 'rooms_id' => rand(1,12),
+                'location_id' => rand(1,6),
             ],
             [
                 'rooms_id' => rand(1,12),
+                'location_id' => rand(1,6),
             ],
             [
                 'rooms_id' => rand(1,12),
+                'location_id' => rand(1,6),
             ],
             [
                 'rooms_id' => rand(1,12),
+                'location_id' => rand(1,6),
             ],
             [
                 'rooms_id' => rand(1,12),
+                'location_id' => rand(1,6),
             ],
             [
                 'rooms_id' => rand(1,12),
+                'location_id' => rand(1,6),
             ],
             [
                 'rooms_id' => rand(1,12),
+                'location_id' => rand(1,6),
             ],
             [
                 'rooms_id' => rand(1,12),
+                'location_id' => rand(1,6),
             ],
             [
                 'rooms_id' => rand(1,12),
+                'location_id' => rand(1,6),
             ],
             [
                 'rooms_id' => rand(1,12),
+                'location_id' => rand(1,6),
             ],
         ];
 
