@@ -22,4 +22,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::apiResource("locations", LocationController::class);
 
-Route::apiResource("/myBookings/{id}", BookingController::class);
+Route::apiResource("/myBookings", BookingController::class);
