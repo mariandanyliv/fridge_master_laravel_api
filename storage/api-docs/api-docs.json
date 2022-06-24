@@ -128,13 +128,6 @@
                         "format": "decimal",
                         "example": 350
                     },
-                    "code": {
-                        "title": "code",
-                        "description": "code booking",
-                        "type": "string",
-                        "format": "string",
-                        "example": "gjfjgFGT89D2"
-                    },
                     "amount_days": {
                         "title": "amount_days",
                         "description": "integer booking",

@@ -28,6 +28,7 @@ class StoreBookingRequest extends FormRequest
             'amount' => 'required',
             'code' => 'required',
             'amount_days' => 'required:max:24',
+
         ];
     }
 }

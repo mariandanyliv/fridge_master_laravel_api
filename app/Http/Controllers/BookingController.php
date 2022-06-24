@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreBookingRequest;
 use App\Models\BookingModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class BookingController extends Controller
 {
@@ -58,10 +59,11 @@ class BookingController extends Controller
     {
         $bookingModel = new BookingModel();
 
-        $bookingModel->fill($request->all());
+        $booking = array_merge($request->all(), ['code' => Str::random(12)]);
+        $bookingModel->fill($booking);
         $bookingModel->save();
 
-        return response()->json($bookingModel);
+        return response('', 201);
     }
 
     /**

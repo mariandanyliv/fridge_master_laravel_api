@@ -44,17 +44,6 @@ class BookingModel extends Model
 
     /**
      * @OA\Property(
-     *     title="code",
-     *     description="code booking",
-     *     format="string",
-     *     example="gjfjgFGT89D2",
-     * )
-     * @var string
-     */
-    public $code;
-
-    /**
-     * @OA\Property(
      *     title="amount_days",
      *     description="integer booking",
      *     format="int64",
