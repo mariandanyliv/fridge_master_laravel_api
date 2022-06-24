@@ -17,6 +17,18 @@ class LocationController extends Controller
      *         response="200",
      *         description="successfully",
      *      ),
+     *      @OA\Response(
+     *          response=400,
+     *          description="Bad Request"
+     *      ),
+     *      @OA\Response(
+     *          response=401,
+     *          description="Unauthenticated",
+     *      ),
+     *      @OA\Response(
+     *          response=403,
+     *          description="Forbidden"
+     *      ),
      * ),
      * Display a listing of the resource.
      *

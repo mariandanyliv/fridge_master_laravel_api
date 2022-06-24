@@ -10,6 +10,45 @@
         }
     ],
     "paths": {
+        "/addBooking": {
+            "post": {
+                "tags": [
+                    "fridge_master"
+                ],
+                "summary": "Store new booking",
+                "description": "Returns booking data",
+                "operationId": "storeBooking",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/BookingModel"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successfull operation"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "app_id": []
+                    }
+                ]
+            }
+        },
         "/myBookings/{id}": {
             "get": {
                 "tags": [
@@ -55,8 +94,63 @@
                 "responses": {
                     "200": {
                         "description": "successfully"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
                     }
                 }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "BookingModel": {
+                "title": "Booking request",
+                "description": "create booking",
+                "properties": {
+                    "user_id": {
+                        "title": "user_id",
+                        "description": "ID user",
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 10
+                    },
+                    "amount": {
+                        "title": "amount",
+                        "description": "amount bookings",
+                        "type": "integer",
+                        "format": "decimal",
+                        "example": 350
+                    },
+                    "code": {
+                        "title": "code",
+                        "description": "code booking",
+                        "type": "string",
+                        "format": "string",
+                        "example": "gjfjgFGT89D2"
+                    },
+                    "amount_days": {
+                        "title": "amount_days",
+                        "description": "integer booking",
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 12
+                    },
+                    "size": {
+                        "title": "size",
+                        "description": "size blocks",
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 5
+                    }
+                },
+                "type": "object"
             }
         }
     }

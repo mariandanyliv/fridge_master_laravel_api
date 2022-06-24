@@ -13,7 +13,7 @@ class StoreBookingRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,10 @@ class StoreBookingRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'user_id' => 'required',
+            'amount' => 'required',
+            'code' => 'required',
+            'amount_days' => 'required:max:24',
         ];
     }
 }

@@ -21,23 +21,19 @@ class BookingSeeder extends Seeder
               'user_id' =>  rand(1,10),
               'amount' => 200,
               'code' => Str::random(12),
-              'date_from' => date('Y-m-d'),
-              'date_to' =>  date('Y-m-d'),
+              'amount_days' => 6,
           ],
           [
               'user_id' => rand(1,10),
               'amount' => 500,
               'code' => Str::random(12),
-              'date_from' =>  date('Y-m-d'),
-              'date_to' =>  date('Y-m-d'),
+              'amount_days' => 1,
           ],
           [
               'user_id' => rand(1,10),
               'amount' => 300,
               'code' => Str::random(12),
-              'date_from' =>  date('Y-m-d'),
-              'date_to' =>  date('Y-m-d'),
-
+              'amount_days' => 12,
           ]
         ];
 

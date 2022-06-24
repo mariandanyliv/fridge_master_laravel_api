@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreBookingRequest;
 use App\Models\BookingModel;
 use Illuminate\Http\Request;
 
@@ -18,14 +19,49 @@ class BookingController extends Controller
     }
 
     /**
+     * @OA\Post(
+     *      path="/addBooking",
+     *      operationId="storeBooking",
+     *      tags={"fridge_master"},
+     *      summary="Store new booking",
+     *      description="Returns booking data",
+     *      security={
+     *          {"app_id": {}},
+     *      },
+     *      @OA\RequestBody(
+     *          required=true,
+     *          @OA\JsonContent(ref="#/components/schemas/BookingModel")
+     *      ),
+     *      @OA\Response(
+     *          response=201,
+     *          description="Successfull operation",
+     *       ),
+     *      @OA\Response(
+     *          response=400,
+     *          description="Bad Request"
+     *      ),
+     *      @OA\Response(
+     *          response=401,
+     *          description="Unauthenticated",
+     *      ),
+     *      @OA\Response(
+     *          response=403,
+     *          description="Forbidden"
+     *      )
+     * )
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreBookingRequest $request)
     {
-        //
+        $bookingModel = new BookingModel();
+
+        $bookingModel->fill($request->all());
+        $bookingModel->save();
+
+        return response()->json($bookingModel);
     }
 
     /**

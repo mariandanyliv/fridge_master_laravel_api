@@ -18,8 +18,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('users')->onUpdate('cascade');
             $table->decimal('amount');
             $table->string('code');
-            $table->date('date_from');
-            $table->date('date_to');
+            $table->integer('amount_days');
             $table->timestamps();
         });
     }
